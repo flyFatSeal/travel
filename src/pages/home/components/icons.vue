@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
 	<div class="wrapper">
 		<swiper :options="swiperOption">
@@ -9,6 +10,7 @@
 					<p class="icon-text" :content="item.des">{{item.des}}</p>
 				</div>
 			</swiper-slide>
+			<div class="swiper-pagination"  slot="pagination"></div>
 		</swiper>
 	</div>
 </template>
@@ -19,7 +21,8 @@ export default {
 	data () {
 		return {
 			swiperOption: {
-				loop:false
+				loop:false,
+				pagination:'.swiper-pagination'
 			},
 			swiperList:[{
 				id: '0001',
@@ -87,16 +90,20 @@ export default {
 <style lang="stylus" scoped>
 	@import '~styles/varibies.styl'
 	@import '~styles/minins.styl'
+	.wrapper
+		border-bottom:.01rem solid #ccc
 	.wrapper >>> .swiper-container
 		height:0
-		padding-bottom:50%
+		padding-bottom:55%
+	.wrapper>>>.swiper-pagination-bullet-active
+		background: rgba(0,175,190,.8) !important
 	.icon
 		position:relative
 		overflow:hidden
 		height:0
 		float:left
 		width:25%
-		padding-bottom:25%
+		padding-bottom:24%
 		.icon-img
 			position:absolute
 			top:0
