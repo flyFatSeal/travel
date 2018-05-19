@@ -2,7 +2,7 @@
 	<div class="wrap">
 		<swiper :options="swiperOption">
 		<!-- slides -->
-		<swiper-slide v-for="item of swiperList" :key="item.id" 
+		<swiper-slide v-for="item of swiperList" :key="item.id"
 		>
 			<img  class="swiper-img" :src="item.url">
 		</swiper-slide>
@@ -22,7 +22,7 @@ export default {
 				loop:true
 			},
 			swiperList:[{
-				id:'0001',
+				id: '0001',
 				url:'http://img1.qunarzz.com/piao/fusion/1804/f2/91b285a08ee21c02.jpg_750x200_8a73fd08.jpg'
 			},{
 				id:'0002',
