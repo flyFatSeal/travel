@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
 	<div class="wrap">
 		<swiper :options="swiperOption">
