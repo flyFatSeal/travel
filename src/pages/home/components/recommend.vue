@@ -3,11 +3,11 @@
 	<div class="wrap">
 		<div class="recommend-title">热门推荐</div>
 		<ul>
-			<li class='recommend-li border-bottom' v-for="item of recommendList" :key="item.id">
-				<img class="info-img" :src="item.url" >
+			<li class='recommend-li border-bottom' v-for="item of List" :key="item.id">
+				<img class="info-img" :src="item.imgUrl" >
 				<div class="info">
 					<p class="info-title">{{item.title}}</p>
-					<p class="info-text">{{item.text}}</p>
+					<p class="info-text">{{item.desc}}</p>
 					<button class="info-button">查看详情</button>
 				</div>
 			</li>
@@ -18,41 +18,8 @@
 <script>
 export default {
 	name: 'HomeRecommend',
-	data () {
-		return {
-			recommendList : [
-				{
-					id:'0001',
-					url:'http://img1.qunarzz.com/sight/p0/1505/be/be4802e10f3b3107.water.jpg_200x200_0e98aabe.jpg',
-					title:'武隆天坑地质国家公园',
-					text:'这是无与伦比的度假胜地'
-				},
-				{
-					id:'0002',
-					url:'http://img1.qunarzz.com/sight/p0/1707/c5/c568c1adf9b18efa3.img.jpg_200x200_803087d7.jpg',
-					title:'武隆天坑地质国家公园',
-					text:'这是无与伦比的度假胜地'
-				},
-				{
-					id:'0003',
-					url:'http://img1.qunarzz.com/sight/p0/1709/63/63fe678289357513a3.img.jpg_200x200_362e3073.jpg',
-					title:'武隆天坑地质国家公园',
-					text:'这是无与伦比的度假胜地'
-				},
-				{
-					id:'0004',
-					url:'http://img1.qunarzz.com/sight/p0/201401/09/4dfba4792c7572b427ba445e900c3552.jpg_200x200_88ffeccf.jpg',
-					title:'武隆天坑地质国家公园',
-					text:'这是无与伦比的度假胜地'
-				},
-				{
-					id:'0005',
-					url:'http://img1.qunarzz.com/sight/p0/1505/ae/ae68c02701c5740a.water.jpg_200x200_824f1ec6.jpg',
-					title:'武隆天坑地质国家公园',
-					text:'这是无与伦比的度假胜地'
-				},
-			]
-		}
+	props:{
+		List:Array
 	}
 }
 </script>

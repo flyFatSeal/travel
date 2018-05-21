@@ -3,13 +3,13 @@
 	<div class="wrap">
 		<div class="recommend-title">周末去哪儿</div>
 		<ul>
-			<li class='border-bottom' v-for="item of recommendList" :key="item.id">
+			<li class='border-bottom' v-for="item of List" :key="item.id">
 				<div class="wrapper-img">
-					<img class="info-img" :src="item.url" >
+					<img class="info-img" :src="item.imgUrl" >
 				</div>
 				<div class="info">
 					<p class="info-title">{{item.title}}</p>
-					<p class="info-text">{{item.text}}</p>
+					<p class="info-text">{{item.desc}}</p>
 				</div>
 			</li>
 		</ul>
@@ -19,29 +19,8 @@
 <script>
 export default {
 	name: 'HomeWeekend',
-	data () {
-		return {
-			recommendList : [
-				{
-					id:'0001',
-					url:'http://img1.qunarzz.com/sight/source/1505/53/4bcd11cc3a5374.jpg_r_640x214_988a4cee.jpg',
-					title:'重庆必游TOP10',
-					text:'重庆，非去不可'
-				},
-				{
-					id:'0002',
-					url:'http://img1.qunarzz.com/sight/source/1505/5f/276ed6784d25ee.jpg_r_640x214_2193082e.jpg',
-					title:'重庆必游TOP10',
-					text:'重庆，非去不可'
-				},
-				{
-					id:'0003',
-					url:'http://img1.qunarzz.com/sight/source/1505/48/f117e9b3bf582a.jpg_r_640x214_b8145711.jpg',
-					title:'重庆必游TOP10',
-					text:'重庆，非去不可'
-				}
-			]
-		}
+	props:{
+		List:Array
 	}
 }
 </script>
@@ -56,7 +35,7 @@ export default {
 	.wrapper-img
 		height:0
 		overflow:hidden
-		padding-bottom:33.9%
+		padding-bottom:37.09%
 		.info-img
 			width:100%
 	.info

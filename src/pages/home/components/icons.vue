@@ -5,9 +5,9 @@
 			<swiper-slide  v-for="(page,index) of pages" :key="index">
 				<div class="icon" v-for="item of page" :key="item.id">
 					<div class="icon-img">
-					   <img  class="icon-img-contenet" :src="item.url" >
+					   <img  class="icon-img-contenet" :src="item.imgUrl" >
 					</div>
-					<p class="icon-text" :content="item.des">{{item.des}}</p>
+					<p class="icon-text" :content="item.desc">{{item.desc}}</p>
 				</div>
 			</swiper-slide>
 			<div class="swiper-pagination"  slot="pagination"></div>
@@ -18,63 +18,21 @@
 <script>
 export default {
 	name:'HomeIcons',
+	props:{
+		List:Array
+	},
 	data () {
 		return {
 			swiperOption: {
 				loop:false,
 				pagination:'.swiper-pagination'
-			},
-			swiperList:[{
-				id: '0001',
-				url:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-				des: '热门景点'
-			},{
-				id:'0002',
-				url:'http://img1.qunarzz.com/piao/fusion/1804/ed/cf572be30fc32f02.png',
-				des: 'Q+精选'
-			},
-			{
-				id:'0003',
-				url:'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-				des: '必游榜单'
-			},
-			{
-				id:'0004',
-				url:'http://img1.qunarzz.com/piao/fusion/1803/bd/9f7b9b2b60c1502.png',
-				des: '踏青赏花'
-			},
-			{
-				id:'0005',
-				url:'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-				des: '一日游'
-			},
-			{
-				id:'0006',
-				url:'http://img1.qunarzz.com/piao/fusion/1803/89/55083b0f1951f302.png',
-				des: '游船游艇'
-			},
-			{
-				id:'0007',
-				url:'http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png',
-				des: '动植物园'
-			},
-			{
-				id:'0008',
-				url:'http://img1.qunarzz.com/piao/fusion/1803/80/416c6ab3368d1f02.png',
-				des: '全部游玩'
-			},
-			{
-				id:'0009',
-				url:'http://img1.qunarzz.com/piao/fusion/1803/e3/67df61427c8e1302.png',
-				des: '演出'
 			}
-			]
 		}
 	},
 	computed: {
 		pages () {
 			const pages= []
-			this.swiperList.forEach((item,index)=>{
+			this.List.forEach((item,index)=>{
 				const page =Math.floor(index/8)
 				if(!pages[page]){
 					pages[page]=[]
