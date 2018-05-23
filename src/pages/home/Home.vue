@@ -1,7 +1,7 @@
 /* eslint-disable */
 <template>
 	<div>
-		<home-header></home-header>
+		<home-header :city="city"></home-header>
 		<home-swiper :List="swiperList"></home-swiper>
 		<home-icons :List="iconList"></home-icons>
     <home-recommend :List="recommendList"></home-recommend>
@@ -30,7 +30,8 @@ export default {
       swiperList:[],
       iconList:[],
       recommendList:[],
-      weekendList:[]
+      weekendList:[],
+      city:''
     }
   },
   methods: {
@@ -46,6 +47,7 @@ export default {
         this.iconList=data.iconList
         this.weekendList=data.weekendList
         this.recommendList=data.recommendList
+        this.city=data.city
       }
 
     }
