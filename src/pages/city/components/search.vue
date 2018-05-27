@@ -10,7 +10,7 @@
 				class="item-list border-topbottom"
 				v-for="item of list"
 				:key="item.id"
-				@click="handleLiClick"
+				@click="handleCityClick(item.name)"
 				ref="searchLi"
 				>{{item.name}}</li>
 				<li
@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import BScroll from 'better-scroll'
 export default {
 	name: 'CitySearch',
@@ -38,9 +39,11 @@ export default {
 		}
 	},
 	methods: {
-		handleLiClick (e) {
-			this.keyWord = e.target.innerText
-		}
+		handleCityClick (city) {
+			this.changeCity(city)
+			this.$router.push('/')
+		},
+		...mapActions(['changeCity'])
 	},
 	computed: {
 		hasList () {
