@@ -45,14 +45,13 @@ export default {
     },
     getHomeInfoSucc (res) {
       res=res.data
-      if(res.ret && res.data){
+      if(res.ret && res.data) {
         const data =res.data
         this.swiperList=data.swiperList
         this.iconList=data.iconList
         this.weekendList=data.weekendList
         this.recommendList=data.recommendList
       }
-
     }
   },
   mounted () {

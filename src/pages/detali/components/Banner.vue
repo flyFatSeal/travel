@@ -1,9 +1,9 @@
 <template>
 	<div>
 		<div class="banner" @click="handleGallaryClick">
-			<img class="banner-img" src="//img1.qunarzz.com/sight/p0/201309/24/977fea7b3c5cd758c8d65eac.jpg_600x330_0f80adad.jpg" alt="">
+			<img class="banner-img" :src="bannerImg" >
 			<div class="banner-info">
-				<div class="banner-title">成都熊猫基地(AAAA景区)</div>
+				<div class="banner-title" :sightName="sightName">{{this.sightName}}</div>
 				<div class="banner-number">
 					<span class="iconfont">&#xe650;</span>
 					14
@@ -11,7 +11,7 @@
 			</div>
 		</div>
 		<gallary
-		 :imgs="imgs"
+		 :imgs="gallaryImgs"
 		 v-show="swiperSwitch"
 		 @close="handleGallaryClick"
 		 >
@@ -23,9 +23,13 @@
 import Gallary from 'common/gallary/Gallary'
 export default {
 	name: 'DetaliBanner',
+	props:{
+		bannerImg:String,
+		sightName:String,
+		gallaryImgs:Array
+	},
 	data () {
 		return {
-			imgs:['http://img1.qunarzz.com/sight/p0/201309/24/977fea7b3c5cd758c8d65eac.jpg_r_800x800_3755d9a0.jpg','http://img1.qunarzz.com/wugc/p216/201207/16/40e62ea907230da393835fbb.jpg_r_800x800_949f826e.jpg'],
 			swiperSwitch:false
 		}
 	},
